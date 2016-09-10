@@ -1,0 +1,48 @@
+3165  execve("./a.out", ["./a.out", "p1"], [/* 68 vars */]) = 0
+3165  brk(0)                            = 0xf30000
+3165  access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+3165  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7c0f43a000
+3165  access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+3165  open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+3165  fstat(3, {st_mode=S_IFREG|0644, st_size=113235, ...}) = 0
+3165  mmap(NULL, 113235, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f7c0f41e000
+3165  close(3)                          = 0
+3165  access("/etc/ld.so.nohwcap", F_OK) = -1 ENOENT (No such file or directory)
+3165  open("/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+3165  read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\37\2\0\0\0\0\0"..., 832) = 832
+3165  fstat(3, {st_mode=S_IFREG|0755, st_size=1845024, ...}) = 0
+3165  mmap(NULL, 3953344, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f7c0ee54000
+3165  mprotect(0x7f7c0f010000, 2093056, PROT_NONE) = 0
+3165  mmap(0x7f7c0f20f000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bb000) = 0x7f7c0f20f000
+3165  mmap(0x7f7c0f215000, 17088, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f7c0f215000
+3165  close(3)                          = 0
+3165  mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7c0f41d000
+3165  mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f7c0f41b000
+3165  arch_prctl(ARCH_SET_FS, 0x7f7c0f41b740) = 0
+3165  mprotect(0x7f7c0f20f000, 16384, PROT_READ) = 0
+3165  mprotect(0x601000, 4096, PROT_READ) = 0
+3165  mprotect(0x7f7c0f43c000, 4096, PROT_READ) = 0
+3165  munmap(0x7f7c0f41e000, 113235)    = 0
+3165  brk(0)                            = 0xf30000
+3165  brk(0xf51000)                     = 0xf51000
+3165  socket(PF_INET, SOCK_DGRAM, IPPROTO_IP) = 3
+3165  bind(3, {sa_family=AF_INET, sin_port=htons(0), sin_addr=inet_addr("0.0.0.0")}, 16) = 0
+3165  getsockname(3, {sa_family=AF_INET, sin_port=htons(43069), sin_addr=inet_addr("0.0.0.0")}, [16]) = 0
+3165  write(1, "p1", 2)                 = 2
+3165  write(1, ": 43069\n", 8)          = 8
+3165  read(0, "p1: 43069\n", 80)        = 10
+3165  read(0, "START\n", 80)            = 6
+3165  read(0, "MESSAGETO p1\n", 80)     = 13
+3165  write(1, "p1: TICK\n", 9)         = 9
+3165  write(1, "Enviando mensaje al proceso p1 \n", 32) = 32
+3165  write(1, "Proceso p1 encontrado, puerto 43"..., 37) = 37
+3165  socket(PF_INET, SOCK_DGRAM, IPPROTO_IP) = 4
+3165  write(1, "Enviando el mensaje...\n", 23) = 23
+3165  sendto(4, "\320\0\363\0\0\0\0\0\2\0\250=\300\250\1\1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0"..., 44, 0, {sa_family=AF_INET, sin_port=htons(43069), sin_addr=inet_addr("192.168.1.1")}, 16) = 44
+3165  write(1, "Mensaje enviado\n", 16) = 16
+3165  write(1, "p1: SEND(MSG,p1)\n", 17) = 17
+3165  read(0, "RECEIVE\n", 80)          = 8
+3165  write(1, "Recibiendo un mensaje...\n", 25) = 25
+3165  recvfrom(3, 0x7fff88dad5c8, 44, 0, 0x7fff88dad5e0, 0x7fff88dad5a8) = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+3165  --- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
+3165  +++ killed by SIGINT +++
